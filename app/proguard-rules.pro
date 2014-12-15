@@ -15,3 +15,11 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+-dontwarn javax.**
+-keep class com.** {*;}
+-keepattributes *Annotation*
+
+-keepnames class * { @butterknife.InjectView *;}
+-keep class **$$ViewInjector { *; }
+-ignorewarnings

@@ -28,8 +28,12 @@ android {
     }
 
     buildTypes {
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -44,4 +48,6 @@ dependencies {
     apt     'com.squareup.dagger:dagger-compiler:1.2.1'
     androidTestCompile     'com.squareup.dagger:dagger-compiler:1.2.1'
     //ParcelAble Please
+    compile 'com.hannesdorfmann.parcelableplease:annotation:1.0.0'
+    apt 'com.hannesdorfmann.parcelableplease:processor:1.0.0'
 }
