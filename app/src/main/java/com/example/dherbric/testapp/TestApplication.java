@@ -2,8 +2,6 @@ package com.example.dherbric.testapp;
 
 import android.app.Application;
 
-import dagger.ObjectGraph;
-
 /**
  * Created on 11.11.2014.
  *
@@ -11,14 +9,14 @@ import dagger.ObjectGraph;
  */
 public class TestApplication extends Application {
 
-    ObjectGraph graph;
+    MainComponent component;
+
     @Override public void onCreate() {
         super.onCreate();
-        graph = ObjectGraph.create(new MainModule());
+        component = Dagger_MainComponent.builder().mainModule(new MainModule()).build();
     }
 
-    public void inject(Object target){
-        graph.inject(target);
+    public MainComponent getComponent() {
+        return component;
     }
-
 }

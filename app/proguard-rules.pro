@@ -16,10 +16,22 @@
 #   public *;
 #}
 
--dontwarn javax.**
--keep class com.** {*;}
 -keepattributes *Annotation*
+-keepattributes Signature
 
--keepnames class * { @butterknife.InjectView *;}
+#-dontwarn javax.**
+-dontwarn com.neenbedankt.**
+###############
+##Butterknife##
+###############
+-keep class butterknife.** { *; }
+-dontwarn butterknife.internal.**
 -keep class **$$ViewInjector { *; }
--ignorewarnings
+
+-keepclasseswithmembernames class * {
+    @butterknife.* <fields>;
+}
+
+-keepclasseswithmembernames class * {
+    @butterknife.* <methods>;
+}

@@ -57,7 +57,7 @@ public class PlaceholderFragment extends Fragment {
 
     @Override public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ((TestApplication)getActivity().getApplication()).inject(this);
+        ((TestApplication)getActivity().getApplication()).getComponent().inject(this);
     }
 
     @Override public void onCreate(Bundle savedInstanceState) {
