@@ -7,3 +7,4 @@ Currently used frameworks:
 - ParcelablePlease
 - Bundles
 - Otto
+- Butterknife
